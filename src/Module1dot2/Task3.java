@@ -19,6 +19,5 @@ public class Task3 {
         double luotiamount = naulaleft / luoti;
 
         System.out.printf(leiviskäamount + ", " + naulaamount + ", %.2f", luotiamount);
-
     }
 }

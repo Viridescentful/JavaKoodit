@@ -6,12 +6,34 @@ public class Task2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        String[] firstnames = {"John", "Steel", "Kenny"};
-        String[] secondnames = {"thatsecondnamewhichmakesnosense", "Cornerstone", "Court"};
+        System.out.print("Enter an array size: "); int arraysize = scanner.nextInt();
+        int[] array = new int[arraysize];
 
-        System.out.println("Give an index for First Name table:"); int firstindex = Integer.parseInt(scanner.nextLine());
-        System.out.println("Give an index for First Name table:"); int secondindex = Integer.parseInt(scanner.nextLine());
+        System.out.println("Enter integers into the array:");
 
-        System.out.println(firstnames[firstindex] + " " + secondnames[secondindex]);
+        for (int i = 0; i < arraysize; i++) {
+            System.out.print("Enter integer " + (i + 1) + ": "); array[i] = scanner.nextInt();
+        }
+
+        int maxsum = Integer.MIN_VALUE;
+        int startindex = 0;
+        int endindex = 0;
+
+        for (int i = 0; i < arraysize; i++) {
+            int currentsum = 0;
+            for (int j = i; j < arraysize; j++) {
+                currentsum += array[j];
+
+                if (currentsum > maxsum) {
+                    maxsum = currentsum;
+                    startindex = i;
+                    endindex = j;
+                }
+            }
+        }
+
+        System.out.println();
+        System.out.println("Maximum sum: " + maxsum);
+        System.out.println("Integers: " + (startindex++) + "-" + (endindex++));
     }
 }

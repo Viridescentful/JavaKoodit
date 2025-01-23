@@ -8,7 +8,7 @@ public class Task1n2 {
     As previously stated, simulation also gives a deeper look into things, which normal immitation cannot cover.
      */
 
-    /* Task2
+    /* Simulation2.Task2
     In supermarkets, the pricing system for items shares a level of complexity, variability and interconnectedness.;
 
     When the price of an item changes in the catalogue, all connected stores should automatically adjust to that;

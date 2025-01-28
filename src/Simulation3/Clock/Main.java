@@ -11,7 +11,6 @@ public class Main {
         singleton.addTimeunits(9);
         System.out.println(singleton.getTimeunits());
         singleton.setTimeunits(892);
-
         System.out.println(singleton.getTimeunits());
     }
 }

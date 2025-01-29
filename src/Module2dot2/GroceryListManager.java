@@ -94,7 +94,7 @@ public class GroceryListManager {
         }
     }
 
-    public void displayAvailableItems() {
+    public void displayavailable() {
         System.out.println("Available Items:");
         boolean available = false;
 
@@ -127,7 +127,7 @@ public class GroceryListManager {
         System.out.println();
         manager.updateamount("Apples", 15);
         System.out.println();
-        manager.displayAvailableItems();
+        manager.displayavailable();
         System.out.println("Total cost of items: $" + manager.totalcost());
     }
 }

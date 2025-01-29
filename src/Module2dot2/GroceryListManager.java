@@ -47,7 +47,6 @@ public class GroceryListManager {
     public void additem(String name, double cost, String category, int quantity) {
         if (!groceryList.containsKey(name)) {
             groceryList.put(name, new GroceryItem(name, cost, category, quantity));
-            System.out.println("Added " + name + " to the list");
         }
     }
 
@@ -119,12 +118,15 @@ public class GroceryListManager {
         manager.additem("Bread", 21.11, "Bakery", 3);
 
         manager.showlist();
+        System.out.println();
         manager.removeitem("Milk");
-
+        System.out.println();
         manager.showlist();
+        System.out.println();
         manager.displaywithcategory("Fruits");
-
+        System.out.println();
         manager.updateamount("Apples", 15);
+        System.out.println();
         manager.displayAvailableItems();
         System.out.println("Total cost of items: $" + manager.totalcost());
     }

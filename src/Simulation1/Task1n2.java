@@ -1,7 +1,7 @@
 package Simulation1;
 
 public class Task1n2 {
-    /* Task1
+    /* Module3dot2.Task1
     When simualtion scenarios, you are able to catch underlying issues which could be detrimental in practise and cause;
     irreversable damage to the system/environment.
 

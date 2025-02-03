@@ -2,7 +2,7 @@ package Simulation2;
 
 public class Task1n4 {
     /*
-    Task1
+    Module3dot2.Task1
 
     The arrival reduces the need for more B type events, by making both types of customers orriginating from the same arrival event;
     and checking the type of call when in queue for service.

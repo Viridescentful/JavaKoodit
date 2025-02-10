@@ -1,8 +1,3 @@
-//Write a Java program that uses two threads to print numbers alternately.
-//One thread should print odd numbers,
-//and the other thread should print even numbers.
-//The program should allow specifying a range of numbers to be printed.
-
 import java.util.ArrayList;
 import java.util.Random;
 

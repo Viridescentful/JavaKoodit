@@ -11,7 +11,7 @@ public class FibonacciCode {
             long second = 1;
 
             for (int i = 1; i <= 60; i++) {
-                writer.println(i + "," + first);
+                writer.println(i + "; " + first);
                 long next = first + second;
                 first = second;
                 second = next;

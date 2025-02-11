@@ -59,6 +59,9 @@ public class Task2 extends Thread {
                 if (i == threads - 1) {
                     Task2 task = new Task2((divisor * i), (divisor * (i + 1) + leftover - 1), numbers);
                     task.start();
+                } else if (i > 0) {
+                    Task2 task = new Task2((divisor * i + 1), (divisor * (i + 1)), numbers);
+                    task.start();
                 } else {
                     Task2 task = new Task2((divisor * i), (divisor * (i + 1)), numbers);
                     task.start();

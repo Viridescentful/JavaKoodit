@@ -2,7 +2,19 @@ public class Main {
     /*
     Task 1, 2, 4, 5?
 
-    Question is extremely unclear?
+    (Using our project's metrostation as an example for task 1)
+    - Arrived Clients
+    - Total simulation time
+    - Tickets sold
+    - Metros used (M1 and M2)
+
+    - Max capacity of metros (M1 and M2)
+    - Average time waited in the ticket queue
+    - Average time waiting for the metro (M1 and M2)
+    - Average time in the ticket service
+
+    - Average queue lenght of the metro departure dock
+    - Average queue legnth of the ticket booth
 
     If we were to discuss how the learned material is present in a bank system. We can start from how the functions are seperated;
     into sections and when each function is gonna be needed to call. In the B events, the bank would finish up servering the customers or receive a customer;

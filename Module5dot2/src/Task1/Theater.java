@@ -1,10 +1,14 @@
 package Task1;
 
 public class Theater {
-    private int tickets;
+    private volatile int tickets;
 
     public Theater() {
-        this.tickets = 30;
+        this.tickets = 20;
+    }
+
+    public synchronized int getTickets() {
+        return this.tickets;
     }
 
     public synchronized void reserveTicket(Customer customer, int tickets) {

@@ -16,6 +16,7 @@ import javafx.geometry.Pos;
 import javafx.geometry.HPos;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 
 public class ConverterView extends Application {
@@ -93,12 +94,9 @@ public class ConverterView extends Application {
         GridPane.setHalignment(ConvertButton, HPos.CENTER);
         layout.setAlignment(Pos.CENTER);
 
-        //StackPane root = new StackPane(layout);
-        //root.setAlignment(Pos.CENTER);
-
         Scene view = new Scene(layout, 800, 300);
 
-        String css = getClass().getResource("/styles.css").toExternalForm();
+        String css = Objects.requireNonNull(getClass().getResource("/styles.css")).toExternalForm();
         view.getStylesheets().add(css);
 
         stage.setTitle("Currency Converter");

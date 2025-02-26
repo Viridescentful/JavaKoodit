@@ -16,7 +16,6 @@ public class Converter {
     }
 
     public String convert(String convertablekey, String convertedkey, String value) {
-
         if (Double.parseDouble(value) <= 0) {
             return String.valueOf("Invalid Amount!");
         } else if (currencies.containsKey(convertablekey) && currencies.containsKey(convertedkey)) {

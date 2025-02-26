@@ -10,6 +10,7 @@
         <module name="Module6dot1" />
         <module name="Module6dot4" />
         <module name="Module6dot2Fix" />
+        <module name="Module6dot3" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

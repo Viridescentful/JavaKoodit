@@ -19,6 +19,9 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.StackPane;
 import javafx.util.Duration;
 
+import javafx.scene.image.ImageView;
+import javafx.scene.SnapshotParameters;
+
 
 public class PetView extends Application {
 
@@ -37,7 +40,6 @@ public class PetView extends Application {
     private Image rabbitImage = new Image(Objects.requireNonNull(getClass().getResource("/rabbit.png")).toExternalForm());
 
     public void start(Stage stage) {
-
         gc.setFill(Color.web(("#7df599")));
         gc.fillRect(0, 0, canvasSize, canvasSize);
 
@@ -85,7 +87,7 @@ public class PetView extends Application {
 
     private void startAnimation() {
         timeline = new Timeline();
-        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.setCycleCount(-1);
 
         KeyFrame keyFrame = new KeyFrame(Duration.millis(2), event -> {
             double deltaX = targetX - currentX;

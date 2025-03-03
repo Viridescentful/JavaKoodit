@@ -9,10 +9,11 @@ import java.util.ArrayList;
 
 public class PetController {
     private PetView gui;
-    private Pet pet = new Pet();
+    private Pet pet;
 
     public PetController(PetView gui) {
         this.gui = gui;
+        this.pet = new Pet();
     }
 
     public void updateposition(double x, double y) {

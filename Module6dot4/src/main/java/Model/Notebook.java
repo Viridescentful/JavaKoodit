@@ -21,9 +21,9 @@ public class Notebook {
     }
 
     public void removeNote(String title) {
-        for (int i = 0; i < notes.size(); i++) {
-            if (notes.get(i).getTitle().equals(title)) {
-                notes.remove(i);
+        for (Note note : notes) {
+            if (note.getTitle().equals(title)) {
+                notes.remove(note);
                 break;
             }
         }

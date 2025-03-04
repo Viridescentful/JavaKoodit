@@ -1,0 +1,1 @@
+select * from currencyconverter.currencies where currency_code = 'USD';

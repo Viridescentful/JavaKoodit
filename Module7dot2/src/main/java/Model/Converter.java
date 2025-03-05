@@ -1,5 +1,6 @@
 package Model;
 
+import Controller.ConverterController;
 import dao.CurrencyDao;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,9 +9,20 @@ import java.util.List;
 public class Converter {
     private HashMap<String, List> currencies;
     private CurrencyDao dao;
+    private ConverterController controller;
 
-    public Converter() {
+    public Converter(ConverterController controller) {
         this.dao = new CurrencyDao();
+        this.controller = controller;
+
+        HashMap<String, List> alldata = dao.getAllCurrencies();
+
+        if (alldata == null) {
+            System.out.println("Error: Could not retrieve currency data.");
+            this.controller.setResult("Error: Could not retrieve currency data.");
+            System.exit(1);
+        }
+
         this.currencies = dao.getAllCurrencies();
     }
 

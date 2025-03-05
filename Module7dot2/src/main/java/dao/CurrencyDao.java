@@ -8,6 +8,11 @@ import java.util.*;
 public class CurrencyDao {
     public HashMap<String, List> getAllCurrencies() {
         Connection conn = MariaDbConnection.getConnection();
+
+        if (conn == null) {
+            return null;
+        }
+
         String sql = "SELECT code, currency_name, conversion_rate FROM currencies";
 
         HashMap<String, List> alldata = new HashMap<>();
@@ -33,6 +38,11 @@ public class CurrencyDao {
 
     public double getConversion(String key) {
         Connection conn = MariaDbConnection.getConnection();
+
+        if (conn == null) {
+            return 0.0;
+        }
+
         String sql = "SELECT conversion_rate FROM currencies WHERE code=?";
 
         double conversionRate = 0.0;

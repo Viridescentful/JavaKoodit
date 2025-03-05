@@ -9,6 +9,7 @@ public class MariaDbConnection {
     private static Connection conn = null;
 
     public static Connection getConnection() {
+
         if (conn==null) {
             // connect if necessary
             try {
@@ -18,11 +19,14 @@ public class MariaDbConnection {
                 System.out.println("Connection failed.");
                 e.printStackTrace();
             }
+
             return conn;
         }
         else {
             return conn;
         }
+
+
     }
 
     public static void terminate() {

@@ -13,6 +13,7 @@ public class Task1 extends Thread {
     public void run() {
         try {
             if (mode.equals("even")) {
+
                 for (int i = this.start; i <= this.end; i++) {
                     if (i % 2 == 0) {
                         System.out.println("Even Thread: " + i);
@@ -48,7 +49,7 @@ public class Task1 extends Thread {
         try {
             firsttask.start();
             secondtask.start();
-            
+
             firsttask.join();
         } catch (InterruptedException e) {
             e.printStackTrace();

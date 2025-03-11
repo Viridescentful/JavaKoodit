@@ -30,12 +30,27 @@ public class Converter {
         return currencies;
     }
 
+    public void addCurrency(String code, String currencyname, double conversionrate) {
+        Currency newCurrency = new Currency();
+        newCurrency.setCode(code);
+        newCurrency.setCurrencyName(currencyname);
+        newCurrency.setConversionRate(conversionrate);
+
+        try {
+            dao.persist(newCurrency);
+            currencies.add(newCurrency);
+            this.controller.setResult("Currency added");
+        } catch (Exception e) {
+            this.controller.setResult("Failed to add " + code);
+        }
+    }
+
     public String convert(String convertablekey, String convertedkey, String value) {
         if (Double.parseDouble(value) <= 0) {
             return String.valueOf("Invalid Amount!");
         } else if ((dao.find(convertablekey).getConversionRate() != 0.0) && (dao.find(convertablekey).getConversionRate() != 0.0)) {
             double convertablevalue = dao.find(convertablekey).getConversionRate();
-            double convertedvalue = dao.find(convertablekey).getConversionRate();
+            double convertedvalue = dao.find(convertedkey).getConversionRate();
 
             return String.valueOf("%,.2f".formatted(Double.parseDouble(value) * (convertedvalue / convertablevalue)));
         } else {

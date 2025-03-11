@@ -21,9 +21,26 @@ INSERT INTO CURRENCIES (code, currency_name, conversion_rate) VALUES
     ('MYR', 'Malaysian Ringgit', 4.46),
     ('JPY', 'Japanese Yen', 149.74);
 
+/*
+ UPDATE INTO CURRENCIES (code, currency_name, conversion_rate) VALUES
+    ('USD', 'US Dollar', 1.0),
+    ('EUR', 'Euro', 0.94),
+    ('GBP', 'British Pound', 0.78),
+    ('INR', 'Indian Rupee', 87.22),
+    ('AUD', 'Australian Dollar', 1.59),
+    ('CAD', 'Canadian Dollar', 1.44),
+    ('SGD', 'Singapore Dollar', 1.34),
+    ('CHF', 'Swiss Franc', 0.89),
+    ('MYR', 'Malaysian Ringgit', 4.46),
+    ('JPY', 'Japanese Yen', 149.74);
+
+ */
+
+DROP USER IF EXISTS 'appuser'@'localhost';
 CREATE USER 'appuser'@'localhost' IDENTIFIED BY 'password';
 GRANT SELECT, INSERT, UPDATE, DELETE ON currencyconverter.* TO 'appuser'@'localhost';
-GRANT SELECT ON currencyconverter.currencies TO 'appuser'@'139.112.64.8';
+GRANT SELECT ON currencyconverter.currencies TO 'appuser'@'localhost';
+FLUSH PRIVILEGES;
 
 
 

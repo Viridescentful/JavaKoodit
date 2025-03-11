@@ -14,7 +14,9 @@ public class Currency {
     private double conversion_rate;
 
     public Currency(String code, String currency_name, double conversion_rate) {
-        super();
+        this.code = code;
+        this.currency_name = currency_name;
+        this.conversion_rate = conversion_rate;
     }
 
     public Currency() {
@@ -47,6 +49,6 @@ public class Currency {
 
     @Override
     public String toString() {
-        return code + " " + currency_name + " " + conversion_rate;
+        return code;
     }
 }

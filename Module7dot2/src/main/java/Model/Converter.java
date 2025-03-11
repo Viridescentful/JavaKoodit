@@ -18,8 +18,8 @@ public class Converter {
         HashMap<String, List> alldata = dao.getAllCurrencies();
 
         if (alldata == null) {
-            System.out.println("Error: Could not retrieve currency data.");
-            this.controller.setResult("Error: Could not retrieve currency data.");
+            System.out.println("Could not retrieve currency data.");
+            this.controller.setResult("Could not retrieve currency data.");
             System.exit(1);
         }
 

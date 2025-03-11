@@ -13,6 +13,11 @@ public class ConverterController {
         gui.setchoices(converter.getall());
     }
 
+    public void addCurrency(String code, String currencyname, double conversionrate) {
+        converter.addCurrency(code, currencyname, conversionrate);
+        gui.setchoices(converter.getall());
+    }
+
     public void calculate(String convertablekey, String convertedkey, String value) {
         if (!isValidDouble(value)) {
             gui.setResult("Invalid Amount!");

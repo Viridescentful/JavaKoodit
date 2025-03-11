@@ -17,11 +17,13 @@ import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.RowConstraints;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Objects;
+
 
 
 public class ConverterView extends Application {
@@ -34,10 +36,51 @@ public class ConverterView extends Application {
     private ChoiceBox<String> convertablechoice = new ChoiceBox<>();
     private ChoiceBox<String> convertedchoice = new ChoiceBox<>();
 
+    private void addstage() {
+        Stage addStage = new Stage();
+        GridPane addLayout = new GridPane();
+
+        TextField codeField = new TextField();
+        TextField nameField = new TextField();
+        TextField rateField = new TextField();
+        Button addButton = new Button("Add");
+
+        addLayout.setHgap(10);
+        addLayout.setVgap(10);
+        addLayout.setPadding(new Insets(10, 10, 10, 10));
+
+        addLayout.add(new Label("Currency Code (3):"), 0, 0);
+        addLayout.add(codeField, 1, 0);
+
+        addLayout.add(new Label("Currency Name:"), 0, 1);
+        addLayout.add(nameField, 1, 1);
+
+        addLayout.add(new Label("Conversion Rate (to USD):"), 0, 2);
+        addLayout.add(rateField, 1, 2);
+
+        addLayout.add(addButton, 1, 3);
+
+        Scene addScene = new Scene(addLayout, 300, 200);
+        addStage.setScene(addScene);
+        addStage.setTitle("Add Currency");
+
+
+
+        addButton.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+                controller.addCurrency(codeField.getText(), nameField.getText(), Double.parseDouble(rateField.getText()));
+                addStage.close();
+            }
+        });
+
+        addStage.showAndWait();
+    }
+
     public void start(Stage stage) {
         GridPane layout = new GridPane();
 
         Button ConvertButton = new Button("Convert");
+        Button AddButton = new Button("Add Currency");
 
         Label convertable = new Label("Convertable");
         Label converted = new Label("Converted");
@@ -80,6 +123,8 @@ public class ConverterView extends Application {
 
         layout.add(convertable, 0, 0);
         layout.add(converted, 2, 0);
+        layout.add(AddButton, 1, 0);
+        GridPane.setHalignment(AddButton, HPos.CENTER);
         GridPane.setHalignment(converted, HPos.RIGHT);
 
         layout.add(input, 0, 1);
@@ -115,12 +160,23 @@ public class ConverterView extends Application {
             }
         });
 
+        AddButton.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+                addstage();
+            }
+        });
+
         stage.show();
     }
 
     public void setchoices(ArrayList<Currency> currencies) {
-        convertablechoice.getItems().addAll(String.valueOf(currencies));
-        convertedchoice.getItems().addAll(String.valueOf(currencies));
+        convertablechoice.getItems().clear();
+        convertedchoice.getItems().clear();
+
+        for (Currency currency : currencies) {
+            convertablechoice.getItems().add(currency.getCode());
+            convertedchoice.getItems().add(currency.getCode());
+        }
     }
 
     public void init() {

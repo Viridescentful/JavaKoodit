@@ -20,6 +20,7 @@
       <module name="Module7dot1" target="17" />
       <module name="Module7dot1Fix" target="17" />
       <module name="Module7dot2" target="17" />
+      <module name="Module8dot1" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>

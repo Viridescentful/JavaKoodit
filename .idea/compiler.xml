@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Module7dot4" />
         <module name="Module7dot3" />
+        <module name="Module7dot3 (1)" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -21,6 +22,7 @@
       <module name="Module7dot1Fix" target="17" />
       <module name="Module7dot2" target="17" />
       <module name="Module8dot1" target="17" />
+      <module name="Module8dot2" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>
